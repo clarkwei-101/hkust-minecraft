@@ -1,0 +1,13 @@
+# Generated artifacts — don't commit
+arnis/arnis-mac-universal
+worlds/raw/
+*.mcworld.bak
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
