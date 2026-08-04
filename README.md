@@ -2,18 +2,33 @@
 
 A 1:1 Minecraft Bedrock Edition recreation of the Hong Kong University of Science and Technology (HKUST) Clear Water Bay campus, generated from real-world OpenStreetMap + Mapterhorn elevation data using [Arnis v3.0.0](https://github.com/louis-e/arnis).
 
-![v1.3 Top-Down](worlds/final/hkust_topdown_v1.3.png)
+![v1.4-detailed Top-Down](worlds/final/hkust_topdown_v1.4-detailed.png)
 
 ---
 
-## What's in v1.3
+## What's in v1.4-detailed (Current Release)
 
-- **`worlds/final/HKUST-2026-Bedrock-v1.3.mcworld`** — Ready-to-load Bedrock Edition world (~6 MB) with **8 hand-built landmarks + 14 height-accurate OSM buildings** already embedded.
-- **`worlds/final/hkust_topdown_v1.3.png`** — Annotated top-down preview showing 22 features.
+- **`worlds/final/HKUST-2026-Bedrock-v1.4-detailed.mcworld`** — Ready-to-load Bedrock Edition world (~6 MB) with **8 hand-built landmarks + 14 enhanced buildings + campus details (paths, parking, trees, sports fields)** already embedded.
+- **`worlds/final/hkust_topdown_v1.4-detailed.png`** — Annotated top-down preview showing 30+ features.
 - **`scripts/inject_landmarks_amulet.py`** — Landmark injection pipeline (8 hand-built structures).
-- **`scripts/inject_manual_buildings.py`** — Manual building injection (14 buildings from `data/manual_buildings.json`).
+- **`scripts/inject_manual_buildings_v2.py`** — Enhanced building injection (14 buildings with windows, dome, doors).
+- **`scripts/inject_campus_details.py`** — Campus details injector (paths, parking, trees, sports fields).
 - **`scripts/render_topdown.py`** — Render any world into a top-down PNG via amulet.
 - **`data/manual_buildings.json`** — Hand-curated list of 14 important buildings with MC coords.
+- **`data/campus_details.json`** — Paths, parking, tree clusters, and sports field definitions.
+
+### v1.4-detailed New: Campus Details (paths + parking + trees + sports fields)
+
+| Type | Count | Examples |
+|------|-------|----------|
+| Stone paths | 6 | Central Campus Path, North-South Path, Dormitory Loop, Lakeside Promenade |
+| Roads | 2 | Main Campus Road (E-W + N-S), East Bus Road |
+| Parking lots | 4 | AB Parking (25×15), Sports Hall, Library, Bus Terminus |
+| Tree clusters | 6 (130 trees) | Academic Building Gardens, Library Gardens, Sports Field Greens, Dormitory Wooded Area |
+| Sports fields | 2 | Soccer Field (55×35), Tennis Courts (22×18) |
+| Benches + lamps | 7 | Atrium Plaza Benches, Central Campus Lamps |
+
+**Total: ~13,170 detail blocks + 100,912 building/landmark blocks ≈ 114,082 hand-placed blocks.**
 
 ### v1.3 New: Height-Accurate Manual Buildings (14)
 

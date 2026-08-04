@@ -1,0 +1,192 @@
+[
+    {
+        "type": "path",
+        "name": "Central Campus Path",
+        "x1": 200, "z1": 200, "x2": 350, "z2": 200,
+        "width": 3,
+        "material": "stone_bricks",
+        "description": "Main walkway from Atrium to east gate"
+    },
+    {
+        "type": "path",
+        "name": "North-South Path",
+        "x1": 210, "z1": 150, "x2": 210, "z2": 300,
+        "width": 3,
+        "material": "stone_bricks",
+        "description": "Academic spine connecting buildings"
+    },
+    {
+        "type": "path",
+        "name": "Dormitory Loop",
+        "x1": 130, "z1": 330, "x2": 610, "z2": 330,
+        "width": 2,
+        "material": "stone_bricks",
+        "description": "Path linking all dormitories at south"
+    },
+    {
+        "type": "path",
+        "name": "Sports Path",
+        "x1": 90, "z1": 230, "x2": 90, "z2": 380,
+        "width": 2,
+        "material": "stone_bricks",
+        "description": "Path from Sports Hall to bus terminus"
+    },
+    {
+        "type": "path",
+        "name": "Lakeside Promenade",
+        "x1": 50, "z1": 100, "x2": 50, "z2": 180,
+        "width": 2,
+        "material": "stone_bricks",
+        "description": "Walk along the seafront"
+    },
+    {
+        "type": "path",
+        "name": "East Bus Road",
+        "x1": 360, "z1": 380, "x2": 360, "z2": 430,
+        "width": 4,
+        "material": "gray_concrete",
+        "description": "Bus approach road to terminus"
+    },
+    {
+        "type": "road",
+        "name": "Main Campus Road (East-West)",
+        "x1": 60, "z1": 380, "x2": 620, "z2": 380,
+        "width": 5,
+        "material": "gray_concrete",
+        "description": "Main vehicle road"
+    },
+    {
+        "type": "road",
+        "name": "Main Campus Road (North-South)",
+        "x1": 90, "z1": 200, "x2": 90, "z2": 380,
+        "width": 5,
+        "material": "gray_concrete",
+        "description": "Main vehicle road north-south"
+    },
+    {
+        "type": "parking",
+        "name": "Academic Building Parking",
+        "x": 290, "z": 185,
+        "size": [25, 15],
+        "material": "gray_concrete",
+        "description": "Small parking lot east of Academic Building"
+    },
+    {
+        "type": "parking",
+        "name": "Sports Hall Parking",
+        "x": 155, "z": 240,
+        "size": [20, 12],
+        "material": "gray_concrete",
+        "description": "Parking near Sports Hall"
+    },
+    {
+        "type": "parking",
+        "name": "Library Parking",
+        "x": 110, "z": 90,
+        "size": [22, 14],
+        "material": "gray_concrete",
+        "description": "Library visitor parking"
+    },
+    {
+        "type": "parking",
+        "name": "Bus Terminus Parking",
+        "x": 410, "z": 410,
+        "size": [25, 18],
+        "material": "gray_concrete",
+        "description": "Visitor parking near Bus Terminus"
+    },
+    {
+        "type": "tree_cluster",
+        "name": "Academic Building Gardens",
+        "x": 245, "z": 220,
+        "radius": 12,
+        "count": 20,
+        "trunk": "oak_log",
+        "leaves": "oak_leaves",
+        "description": "Decorative trees around Academic Building"
+    },
+    {
+        "type": "tree_cluster",
+        "name": "Library Gardens",
+        "x": 110, "z": 140,
+        "radius": 10,
+        "count": 15,
+        "trunk": "oak_log",
+        "leaves": "oak_leaves",
+        "description": "Trees around Library"
+    },
+    {
+        "type": "tree_cluster",
+        "name": "Sports Field Greens",
+        "x": 50, "z": 300,
+        "radius": 15,
+        "count": 25,
+        "trunk": "oak_log",
+        "leaves": "oak_leaves",
+        "description": "Trees between Sports Hall and waterfront"
+    },
+    {
+        "type": "tree_cluster",
+        "name": "Dormitory Wooded Area",
+        "x": 550, "z": 330,
+        "radius": 18,
+        "count": 30,
+        "trunk": "oak_log",
+        "leaves": "oak_leaves",
+        "description": "Trees between UG Halls"
+    },
+    {
+        "type": "tree_cluster",
+        "name": "Central Lawn Trees",
+        "x": 350, "z": 250,
+        "radius": 15,
+        "count": 22,
+        "trunk": "oak_log",
+        "leaves": "oak_leaves",
+        "description": "Trees in central campus lawn"
+    },
+    {
+        "type": "tree_cluster",
+        "name": "Seaside Trees",
+        "x": 100, "z": 50,
+        "radius": 12,
+        "count": 18,
+        "trunk": "oak_log",
+        "leaves": "oak_leaves",
+        "description": "Trees along waterfront"
+    },
+    {
+        "type": "sports_field",
+        "name": "HKUST Soccer Field",
+        "x": 50, "z": 320,
+        "size": [55, 35],
+        "border": "white_concrete",
+        "field": "green_concrete",
+        "description": "Open grass soccer field by Sports Hall"
+    },
+    {
+        "type": "sports_field",
+        "name": "Tennis Courts",
+        "x": 145, "z": 290,
+        "size": [22, 18],
+        "border": "white_concrete",
+        "field": "blue_concrete",
+        "description": "Tennis court complex"
+    },
+    {
+        "type": "bench_row",
+        "name": "Atrium Plaza Benches",
+        "x": 220, "z": 200,
+        "count": 6,
+        "material": "oak_fence",
+        "description": "Benches around Atrium"
+    },
+    {
+        "type": "lamp_row",
+        "name": "Central Campus Lamps",
+        "x1": 200, "z1": 200, "x2": 350, "z2": 200,
+        "spacing": 12,
+        "material": "sea_lantern",
+        "description": "Lamp posts along Central Campus Path"
+    }
+]
