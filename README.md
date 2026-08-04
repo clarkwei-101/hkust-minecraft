@@ -2,57 +2,39 @@
 
 A 1:1 Minecraft Bedrock Edition recreation of the Hong Kong University of Science and Technology (HKUST) Clear Water Bay campus, generated from real-world OpenStreetMap + Mapterhorn elevation data using [Arnis v3.0.0](https://github.com/louis-e/arnis).
 
-![v1.5 Top-Down](worlds/final/hkust_topdown_v1.5.png)
+![v1.6 Top-Down](worlds/final/hkust_topdown_v1.6.png)
 
 ---
 
-## What's in v1.5 (Current Release)
+## What's in v1.6 (Current Release)
 
-- **`worlds/final/HKUST-2026-Bedrock-v1.5.mcworld`** — Ready-to-load Bedrock Edition world (~6 MB) with **8 hand-built landmarks + 14 enhanced buildings + 36 more OSM buildings + interior details + campus details (paths, parking, trees, sports fields) + coastal details + dynamic elements (train, bus, boat, helicopter)** already embedded.
-- **`worlds/final/hkust_topdown_v1.5.png`** — Annotated top-down preview showing 50+ features.
+- **`worlds/final/HKUST-2026-Bedrock-v1.6.mcworld`** — Ready-to-load Bedrock Edition world (~6 MB) with **8 hand-built landmarks + 50 buildings + interior decorations + campus details + coastal details + dynamic elements + full lighting system** already embedded.
+- **`worlds/final/hkust_topdown_v1.6.png`** — Annotated top-down preview showing 50+ features.
 - **`scripts/inject_landmarks_amulet.py`** — Landmark injection pipeline (8 hand-built structures).
 - **`scripts/inject_manual_buildings_v2.py`** — Enhanced building injection (14 buildings with windows, dome, doors).
 - **`scripts/inject_campus_details.py`** — Campus details injector (paths, parking, trees, sports fields).
-- **`scripts/inject_more_buildings.py`** (NEW) — Auto-injects remaining 36 OSM buildings.
-- **`scripts/inject_interiors.py`** (NEW) — Adds interior decorations (atrium skylight, library desks, sports court, dorm rooms, dome staircase).
-- **`scripts/inject_coastal.py`** (NEW) — Replaces shore grass with sand, adds kelp/sea grass/coral, extends promenade.
-- **`scripts/inject_dynamic.py`** (NEW) — Adds train, bus, boat, helicopter.
-- **`scripts/render_topdown.py`** — Render any world into a top-down PNG via amulet.
+- **`scripts/inject_more_buildings.py`** — Auto-injects remaining 36 OSM buildings.
+- **`scripts/inject_interiors.py`** — Adds interior decorations (atrium skylight, library desks, sports court, dorm rooms, dome staircase).
+- **`scripts/inject_coastal.py`** — Replaces shore grass with sand, adds kelp/sea grass/coral, extends promenade.
+- **`scripts/inject_dynamic.py`** — Adds train, bus, boat, helicopter.
+- **`scripts/inject_lighting.py`** (NEW) — Full campus lighting system: 1,460+ glowstone windows, streetlights, accent floodlights, chandeliers, lanterns, tunnel lighting.
+- **`scripts/render_lights_showcase.py`** (NEW) — Renders light distribution across campus.
+- **`scripts/render_topdown_night.py`** (NEW) — Night-mode renderer (lights glowing on dark campus).
 
-### v1.5 New: Interior Decorations (8 interiors enhanced)
+### v1.6 New: Lighting System
 
-| Landmark | Interior additions |
-|----------|-------------------|
-| **Atrium** | Glass skylight dome, 4 cafe tables + 8 chairs, plant pots with flowers, 8 hanging banners, central chandelier |
-| **Library** | 4 reading desks + 4 chairs, 6 bookshelf stacks, central chandelier, lectern, enchanting table |
-| **Sports Hall** | Basketball court markings, free-throw lines, 6-row bleachers, scoreboard |
-| **Dome** | Central oculus, spiral staircase ascending the dome |
-| **Sundial** | 12 zodiac markers around the circle, 4 cardinal quartz pillars |
-| **Fountain** | Concentric water rings (3 layers) |
-| **UG Hall I + VII** | 7-floor carpets + beds + room markers |
+| Type | Count | Description |
+|------|-------|-------------|
+| **Path streetlights** | ~150 | Sea lanterns on oak fence posts, every 10–20 blocks along all paths and main roads |
+| **Building window glow** | 1,460 | Glowstone behind glass windows on all 50 buildings (visible from above) |
+| **Accent floodlights** | 12 | Quartz pillars + sea lanterns around the 3 main landmarks (Dome, Sundial, Fountain) |
+| **Chandeliers** | 3 | Central Atrium, Library, Sports Hall hanging chandeliers |
+| **Entrance lanterns** | 14 | Hanging lanterns at major building entrances |
+| **Tunnel lighting** | 14 | Sea lanterns in the Underpass tunnel |
+| **Seaview lanterns** | 13 | Lanterns along the Seaview Walkway |
+| **Total light sources** | **~1,668** | All visible from above as warm yellow glow |
 
-### v1.5 New: 36 More OSM Buildings
-
-Auto-injected from `data/hkust_osm_buildings_mc.json`:
-- **21 staff quarters** (Staff Quarters Towers 8, 9, 10, 11, etc.) — light gray concrete with light blue windows
-- **3 academic buildings** (Wong Check She Research Center, etc.)
-- **10 default buildings** (various university facilities)
-- **2 university buildings**
-
-### v1.5 New: Coastal Details
-
-- Replaced shore grass with **sand beaches** along the entire coastline
-- Added **kelp, sea grass, and brain coral** in shallow water
-- Extended the **waterfront promenade** with oak fence railings
-
-### v1.5 New: Dynamic Elements (Vehicles)
-
-- **Metro train** at bus terminus (3 cars, 8 wide × 4 long × 2 tall, gray concrete)
-- **Red double-decker bus** at bus terminus
-- **Sail boat** at the waterfront (oak hull + white sail + oak mast)
-- **Helicopter** on Sports Hall roof (light gray + glass cockpit)
-
-### v1.5 Cumulative Stats
+### v1.6 Cumulative Stats
 
 | Layer | Blocks | Source |
 |-------|--------|--------|
@@ -64,8 +46,9 @@ Auto-injected from `data/hkust_osm_buildings_mc.json`:
 | Interior decorations (8 landmarks) | ~736 | `inject_interiors.py` |
 | Coastal details | ~63 | `inject_coastal.py` |
 | Dynamic elements (4 vehicles) | ~202 | `inject_dynamic.py` |
-| **Total hand-placed** | **~128,645** | |
-| **Total in world** | **~730k+** | Arnis + above |
+| **Lighting system (NEW)** | **~5,588** | `inject_lighting.py` |
+| **Total hand-placed** | **~134,233** | |
+| **Total in world** | **~735k+** | Arnis + above |
 
 ### v1.3 New: Height-Accurate Manual Buildings (14)
 
