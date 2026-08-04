@@ -2,52 +2,47 @@
 
 A 1:1 Minecraft Bedrock Edition recreation of the Hong Kong University of Science and Technology (HKUST) Clear Water Bay campus, generated from real-world OpenStreetMap + Mapterhorn elevation data using [Arnis v3.0.0](https://github.com/louis-e/arnis).
 
-![Annotated Top-Down](previews/hkust-topdown-annotated.png)
+![v1.1 Top-Down](worlds/final/hkust_topdown_v1.1.png)
 
 ---
 
-## What's inside
+## What's in v1.1
 
-- **`worlds/final/HKUST-2026-Bedrock.mcworld`** — Ready-to-load Bedrock Edition world (~8 MB). Drop it into Minecraft Bedrock on Windows / iOS / Android / Xbox / PlayStation.
-- **`landmarks/`** — Blueprint JSON for HKUST's four most iconic landmarks (Arnis doesn't model these semantically yet):
-  - `01-academic-dome.schem` (41×26×41, 3210 blocks) — the round academic dome
-  - `02-circle-of-time-sundial.schem` (9×8×9, 183 blocks) — Red Bird sundial at North Gate
-  - `03-one-world-fountain.schem` (13×6×13, 343 blocks) — One-World Fountain at Central Piazza
-  - `04-seaview-railings.schem` (601×3×5, 1852 blocks) — 600 m balustrade along Clear Water Bay
-- **`previews/`** — Top-down PNG previews of the generated map, annotated with the 4 hand-built landmarks.
-- **`osm/hkust-overpass.json`** — Offline-cached Overpass API dump for reproducible builds.
-- **`scripts/`** — Generation + annotation Python / shell scripts.
-- **`arnis/`** — Arnis v3.0.0 macOS universal binary (`arnis-mac-universal`, 107 MB).
+- **`worlds/final/HKUST-2026-Bedrock-v1.1.mcworld`** — Ready-to-load Bedrock Edition world (~8 MB) with **5 hand-built landmarks already embedded in the world** — drop it into Minecraft Bedrock and see them immediately.
+- **`worlds/final/hkust_topdown_v1.1.png`** — Annotated top-down preview showing landmark positions.
+- **`scripts/inject_landmarks_amulet.py`** — Landmarinjection pipeline (amulet + LevelDB backend).
+- **`scripts/patch_amulet_for_arnis.sh`** — Applies 2 patches to amulet-core so it can read Arnis-generated Bedrock 1.21.40 worlds.
+- **`landmarks/`** — Original blueprint JSON for HKUST's four most iconic landmarks.
 
-> **v1.0.1 note:** The four landmark `.schem` files are currently **JSON blueprints only** (not yet baked into `HKUST-2026-Bedrock.mcworld`). To see them in-game, load them via WorldEdit BE addon's `//schem load` + `//schem paste` inside the Bedrock client — see `landmarks/README.md` for paste coordinates. Native in-`.mcworld` injection is planned for v1.1.
+### Hand-built landmarks (auto-injected in v1.1)
 
----
+| Landmark | Position (X/Y/Z) | Blocks | Description |
+|----------|------------------|--------|-------------|
+| **Academic Building Dome** | 200 / 127 / 500 | 6,907 | 40 m hemispheric dome on the elevated plateau |
+| **Circle of Time Sundial** | 185 / 127 / 530 | 1,744 | Quartz-pillar compass sundial plaza |
+| **One-World Fountain** | 279 / 78 / 663 | 492 | Sea-lantern + gold-block fountain with blue basin |
+| **Seaview Walkway** | 480 / 65 / 380 | 620 | 80 m oak-slab walkway with brick pillars + dark oak railings |
+| **HKUST Library** | 130 / 84 / 580 | 2,162 | 24×18×18 glass-and-white-concrete library tower |
 
-## Coverage
-
-| | |
-|---|---|
-| Bounding box | `22.3317768,114.2617409,22.3404248,114.2695826` |
-| OSM relation | way `40664120` (amenity=university) |
-| Scale | 1 block per meter (1:1) |
-| Elevation range | ~168 m vertical relief (Mapterhorn, no `--aws-only-elevation`) |
-| Trees | ~870 procedurally-placed (746 regional + 124 vanilla sprinkle) |
-| Buildings | OSM footprints + 22 Overture-enriched + 4 hand-built (paste-only) |
-| Generation | ~9 seconds on M-series Mac, ~1.5 GB peak RAM |
-| Output format | Bedrock `.mcworld` with ±512 build-height behavior pack (requires Minecraft 1.21.40+) |
+**Total: 11,925 hand-placed blocks across 5 landmarks.**
 
 ---
 
-## What v1.0.1 added (vs v1.0)
+## What's in v1.0 → v1.0.1 → v1.1
 
-- **Realistic elevation**: removed `--aws-only-elevation` so Arnis uses Mapterhorn (global high-res + regional 1 m providers) instead of 30 m AWS Terrain Tiles. The campus now has ~168 m of vertical relief matching real Clear Water Bay.
-- **Climate-driven biomes**: enabled by default in Arnis v3.0.0 — forests spawn in the right zones, not randomly.
-- **Region-aware tree pack**: 746 procedural trees placed by Arnis's tree processor across grass/forest/parks.
-- **Building interiors**: `--interior=true` adds internal floors to buildings so windows aren't black voids.
-- **Baked per-chunk lighting** (`--bake-lighting`): distant chunks render lit in LOD mods (Voxy / Chunky) without the player needing to visit them first.
-- **Better land-cover repair**: Gaussian-smoothed built-up cells, reclassified piers/embankments as water, pulled coastal cells toward shoreline.
+### v1.0.1 (previous)
+- Real Mapterhorn elevation instead of 30 m AWS Terrain Tiles
+- Climate-driven biomes, region-aware tree pack
+- Building interiors + baked lighting
+- 4 landmarks: blueprint JSON only (paste-only)
 
-World file size grew from **~3 MB → ~8 MB** because of all the new geometry.
+### v1.1 (current) — **Goal: highest-fidelity replica**
+- **5 landmarks auto-injected into `.mcworld`** via patched amulet + Bedrock LevelDB
+- **Heightmap-aligned** — each landmark scans local ground height and perches correctly on slope
+- **Verified by playing** — diamond_block test marker injected and read back from a fresh load
+- **Reproducible** — `scripts/inject_landmarks_amulet.py` rebuilds landmarks from scratch in ~2 seconds
+
+> **Roadmap to v1.1 GA (perfect replica):** Building heights from Hong Kong Lands Department 3D Tiles (218k buildings, 12M triangles) — next iteration will voxelize the actual building footprints and replace the 5 schematic landmarks with height-accurate volumes.
 
 ---
 
@@ -61,7 +56,7 @@ World file size grew from **~3 MB → ~8 MB** because of all the new geometry.
   --save-json-file=osm/hkust-overpass.json
 ```
 
-### 2. Generate the world (v1.0.1 command)
+### 2. Generate the world (v1.0.1 command, unchanged for v1.1)
 
 ```bash
 ./arnis/arnis-mac-universal \
@@ -82,34 +77,46 @@ World file size grew from **~3 MB → ~8 MB** because of all the new geometry.
   --bake-lighting
 ```
 
-Key flags for fidelity:
-- `--terrain` — read real Mapterhorn elevation, generate hills/coast
-- `--interior=true` — add internal floors to buildings
-- `--bake-lighting` — pre-compute chunk lighting for LOD mods
-- `--overture=true` — supplement OSM with satellite-detected building footprints
-
-### 3. Hand-built landmark blueprints (paste-only in v1.0.1)
+### 3. Inject hand-built landmarks (NEW for v1.1)
 
 ```bash
-python3 landmarks/generate_schems.py
+# One-time: patch amulet-core to read Arnis 1.21.40 worlds
+./scripts/patch_amulet_for_arnis.sh
+
+# Inject landmarks into the generated world
+python3 scripts/inject_landmarks_amulet.py \
+  --world /tmp/hkust_extracted \
+  --dry-run                    # preview first
+python3 scripts/inject_landmarks_amulet.py \
+  --world /tmp/hkust_extracted # actually inject
 ```
 
-To see them in-game, install the **WorldEdit BE** addon in Minecraft Bedrock, then:
+---
 
-```
-//schem load 01-academic-dome
-//schem paste
-```
+## Files
 
-Coordinates and material guides are in `landmarks/README.md`.
+| Path | Purpose |
+|------|---------|
+| `worlds/final/HKUST-2026-Bedrock-v1.1.mcworld` | The world (8.3 MB) |
+| `worlds/final/hkust_topdown_v1.1.png` | Annotated top-down preview |
+| `worlds/final/HKUST-2026-Bedrock.mcworld` | v1.0.1 (no landmarks injected) |
+| `arnis/arnis-mac-universal` | Arnis v3.0.0 binary (107 MB) |
+| `osm/hkust-overpass.json` | Cached Overpass API dump |
+| `landmarks/` | Blueprint JSON for landmarks |
+| `scripts/inject_landmarks_amulet.py` | Landmark injection pipeline |
+| `scripts/patch_amulet_for_arnis.sh` | amulet Arnis compatibility patch |
+| `scripts/annotate_preview.py` | Top-down renderer (annotates blocks → colors) |
 
-> **v1.1 plan:** Landmarks will be auto-injected into the `.mcworld` via a custom Arnis element processor. See `landmarks/README.md` for the design notes.
+---
 
-### 4. Render the annotated preview
+## amulet Arnis Compatibility
 
-```bash
-python3 scripts/annotate_preview.py
-```
+Standard `amulet-core` (v1.9.43) cannot read Arnis-generated Bedrock 1.21.40 worlds because:
+
+1. Arnis writes the `+` key data as 540 bytes (512 heightmap + 28 biome header) instead of 544 → `struct.error: unpack requires a buffer of 4 bytes`
+2. The biome loop consumes data in 5-byte chunks, leaving 2 bytes at the end that triggers the same struct error
+
+`scripts/patch_amulet_for_arnis.sh` applies two one-line patches to `amulet/level/formats/leveldb_world/interface/chunk/base_leveldb_interface.py` so amulet can read, modify, and write back into Arnis worlds.
 
 ---
 
@@ -117,13 +124,14 @@ python3 scripts/annotate_preview.py
 
 - macOS Apple Silicon or Intel (the `arnis-mac-universal` binary works on both)
 - Minecraft Bedrock Edition **1.21.40 or newer** (for the extended build-height behavior pack)
-- For schematic rebuilding: WorldEdit BE addon (optional in v1.0.1, mandatory once landmarks are paste-only)
+- Python 3.11 (M-series native)
+- `pip install amulet-core leveldb pillow`
 
 ---
 
 ## Embed on a website
 
-The annotated top-down PNG is included as `previews/hkust-topdown-annotated.png`. The HKUST AI Applications Society admission-letter site embeds it at `src/app/content/minecraft/page.tsx` with a download link to `HKUST-2026-Bedrock.mcworld`.
+The annotated top-down PNG is included as `worlds/final/hkust_topdown_v1.1.png`. The HKUST AI Applications Society admission-letter site embeds it at `src/app/content/minecraft/page.tsx` with a download link to `HKUST-2026-Bedrock-v1.1.mcworld`.
 
 ---
 
@@ -133,6 +141,7 @@ The annotated top-down PNG is included as `previews/hkust-topdown-annotated.png`
 - Elevation: Mapterhorn (global) + AWS Terrain Tiles + regional high-res providers
 - Building enrichment: [Overture Maps](https://overturemaps.org/)
 - Generation: [Arnis](https://github.com/louis-e/arnis) by [@louis-e](https://github.com/louis-e) and contributors (Apache-2.0)
+- Injection: amulet-core + custom LevelDB patches
 - Project: HKUST AI Application Society · Cyber Foundation · 2026
 
 ---
