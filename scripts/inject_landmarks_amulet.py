@@ -76,6 +76,9 @@ OAK_SLAB = BlockSpec("minecraft", "oak_slab", {"top_slot_bit": False})
 WATER = BlockSpec("minecraft", "water")
 BRICK = BlockSpec("minecraft", "brick_block")
 GOLD_BLOCK = BlockSpec("minecraft", "gold_block")
+RED_CONCRETE = BlockSpec("minecraft", "red_concrete")
+OAK_LEAVES = BlockSpec("minecraft", "oak_leaves")
+OAK_PLANKS = BlockSpec("minecraft", "oak_planks")
 
 
 # =============================================================================
@@ -282,6 +285,126 @@ def build_library_landmark() -> LandmarkSchematic:
     )
 
 
+def build_atrium() -> LandmarkSchematic:
+    """HKUST Atrium (Central Piazza) — open courtyard with shops."""
+    blocks = []
+    W, H, D = 30, 4, 20
+
+    # Open courtyard floor
+    for x in range(W):
+        for z in range(D):
+            # Checkerboard pattern
+            if (x + z) % 2 == 0:
+                blocks.append((x, 0, z, POLISHED_DIORITE))
+            else:
+                blocks.append((x, 0, z, SMOOTH_STONE))
+
+    # Low walls around perimeter
+    for x in range(W):
+        for z in [0, D - 1]:
+            for y in range(1, 3):
+                blocks.append((x, y, z, CONCRETE_WHITE))
+    for z in range(D):
+        for x in [0, W - 1]:
+            for y in range(1, 3):
+                blocks.append((x, y, z, CONCRETE_WHITE))
+
+    # Decorative pillars at corners
+    for cx, cz in [(0, 0), (W-1, 0), (0, D-1), (W-1, D-1)]:
+        for y in range(1, 5):
+            blocks.append((cx, y, cz, QUARTZ_PILLAR))
+
+    # Central fountain
+    for x in range(13, 17):
+        for z in range(8, 12):
+            blocks.append((x, 1, z, WATER))
+    for y in range(1, 4):
+        blocks.append((14, y, 9, SEA_LANTERN))
+        blocks.append((15, y, 9, SEA_LANTERN))
+    blocks.append((14, 4, 9, GOLD_BLOCK))
+    blocks.append((15, 4, 9, GOLD_BLOCK))
+
+    # Trees (oak leaves clusters)
+    for tx, tz in [(5, 5), (24, 5), (5, 14), (24, 14)]:
+        for dx in range(-1, 2):
+            for dz in range(-1, 2):
+                for dy in range(1, 4):
+                    if abs(dx) + abs(dz) <= 2:
+                        blocks.append((tx + dx, dy, tz + dz, OAK_LEAVES))
+
+    return LandmarkSchematic(
+        name="atrium",
+        display_name="HKUST Atrium",
+        blocks=blocks,
+    )
+
+
+def build_lg7() -> LandmarkSchematic:
+    """Lecture Hall LG7 — large tiered lecture hall."""
+    blocks = []
+    W, H, D = 40, 16, 30
+
+    for x in range(W):
+        for y in range(H):
+            for z in range(D):
+                # Exterior walls
+                if x == 0 or x == W - 1 or z == 0 or z == D - 1:
+                    if y < H - 1:
+                        blocks.append((x, y, z, CONCRETE_WHITE))
+                    else:
+                        blocks.append((x, y, z, POLISHED_ANDESITE))
+                # Floor
+                elif y == 0:
+                    blocks.append((x, y, z, POLISHED_DIORITE))
+                # Tiered seating (slope upward from front to back)
+                elif y == 1 and z < D - 5:
+                    # Stage / presentation area
+                    blocks.append((x, y, z, RED_CONCRETE))
+                elif y > 1 and z > D - 15 and y < (y < 1 + (z - (D - 15)) * 0.4):
+                    # Tiered steps rising as we go back
+                    if (x + z) % 2 == 0 or y < 4:
+                        blocks.append((x, y, z, OAK_PLANKS))
+                # Roof
+                elif y == H - 1:
+                    blocks.append((x, y, z, POLISHED_ANDESITE))
+
+    return LandmarkSchematic(
+        name="lg7",
+        display_name="Lecture Hall LG7",
+        blocks=blocks,
+    )
+
+
+def build_underpass() -> LandmarkSchematic:
+    """HKUST Underpass — tunnel between Academic concourse and Bus Station."""
+    blocks = []
+    L, W, H = 30, 5, 4
+
+    for x in range(L):
+        for y in range(H):
+            for z in range(W):
+                # Floor
+                if y == 0:
+                    blocks.append((x, y, z, SMOOTH_STONE))
+                # Walls
+                elif z == 0 or z == W - 1:
+                    blocks.append((x, y, z, CONCRETE_WHITE))
+                # Roof
+                elif y == H - 1:
+                    blocks.append((x, y, z, CONCRETE_WHITE))
+                # Interior
+                else:
+                    # Light every 5 blocks
+                    if x % 5 == 0 and y == H - 2:
+                        blocks.append((x, y, z, SEA_LANTERN))
+
+    return LandmarkSchematic(
+        name="underpass",
+        display_name="HKUST Underpass",
+        blocks=blocks,
+    )
+
+
 # =============================================================================
 # WORLD SCANNER & LANDMARK PLACEMENTS
 # =============================================================================
@@ -302,6 +425,12 @@ LANDMARK_DEFINITIONS = [
     dict(name="seaview-walkway",  world_x=480, world_z=380, description="Seaview walkway along coast"),
     # 5. Library — north campus
     dict(name="library",          world_x=130, world_z=580, description="HKUST Library building"),
+    # 6. Atrium — central piazza (NEW for v1.2)
+    dict(name="atrium",           world_x=240, world_z=560, description="HKUST Central Piazza Atrium"),
+    # 7. Lecture Hall LG7 — academic core (NEW for v1.2)
+    dict(name="lg7",              world_x=320, world_z=620, description="Lecture Hall LG7 tiered auditorium"),
+    # 8. Underpass — pedestrian tunnel (NEW for v1.2)
+    dict(name="underpass",        world_x=380, world_z=450, description="HKUST underpass pedestrian tunnel"),
 ]
 
 
@@ -391,6 +520,9 @@ def main():
         "one-world-fountain": build_one_world_fountain(),
         "seaview-walkway": build_seaview_walkway(),
         "library": build_library_landmark(),
+        "atrium": build_atrium(),
+        "lg7": build_lg7(),
+        "underpass": build_underpass(),
     }
 
     print(f"\nSchematics built:")
