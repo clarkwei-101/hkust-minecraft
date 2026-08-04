@@ -2,33 +2,70 @@
 
 A 1:1 Minecraft Bedrock Edition recreation of the Hong Kong University of Science and Technology (HKUST) Clear Water Bay campus, generated from real-world OpenStreetMap + Mapterhorn elevation data using [Arnis v3.0.0](https://github.com/louis-e/arnis).
 
-![v1.4-detailed Top-Down](worlds/final/hkust_topdown_v1.4-detailed.png)
+![v1.5 Top-Down](worlds/final/hkust_topdown_v1.5.png)
 
 ---
 
-## What's in v1.4-detailed (Current Release)
+## What's in v1.5 (Current Release)
 
-- **`worlds/final/HKUST-2026-Bedrock-v1.4-detailed.mcworld`** — Ready-to-load Bedrock Edition world (~6 MB) with **8 hand-built landmarks + 14 enhanced buildings + campus details (paths, parking, trees, sports fields)** already embedded.
-- **`worlds/final/hkust_topdown_v1.4-detailed.png`** — Annotated top-down preview showing 30+ features.
+- **`worlds/final/HKUST-2026-Bedrock-v1.5.mcworld`** — Ready-to-load Bedrock Edition world (~6 MB) with **8 hand-built landmarks + 14 enhanced buildings + 36 more OSM buildings + interior details + campus details (paths, parking, trees, sports fields) + coastal details + dynamic elements (train, bus, boat, helicopter)** already embedded.
+- **`worlds/final/hkust_topdown_v1.5.png`** — Annotated top-down preview showing 50+ features.
 - **`scripts/inject_landmarks_amulet.py`** — Landmark injection pipeline (8 hand-built structures).
 - **`scripts/inject_manual_buildings_v2.py`** — Enhanced building injection (14 buildings with windows, dome, doors).
 - **`scripts/inject_campus_details.py`** — Campus details injector (paths, parking, trees, sports fields).
+- **`scripts/inject_more_buildings.py`** (NEW) — Auto-injects remaining 36 OSM buildings.
+- **`scripts/inject_interiors.py`** (NEW) — Adds interior decorations (atrium skylight, library desks, sports court, dorm rooms, dome staircase).
+- **`scripts/inject_coastal.py`** (NEW) — Replaces shore grass with sand, adds kelp/sea grass/coral, extends promenade.
+- **`scripts/inject_dynamic.py`** (NEW) — Adds train, bus, boat, helicopter.
 - **`scripts/render_topdown.py`** — Render any world into a top-down PNG via amulet.
-- **`data/manual_buildings.json`** — Hand-curated list of 14 important buildings with MC coords.
-- **`data/campus_details.json`** — Paths, parking, tree clusters, and sports field definitions.
 
-### v1.4-detailed New: Campus Details (paths + parking + trees + sports fields)
+### v1.5 New: Interior Decorations (8 interiors enhanced)
 
-| Type | Count | Examples |
-|------|-------|----------|
-| Stone paths | 6 | Central Campus Path, North-South Path, Dormitory Loop, Lakeside Promenade |
-| Roads | 2 | Main Campus Road (E-W + N-S), East Bus Road |
-| Parking lots | 4 | AB Parking (25×15), Sports Hall, Library, Bus Terminus |
-| Tree clusters | 6 (130 trees) | Academic Building Gardens, Library Gardens, Sports Field Greens, Dormitory Wooded Area |
-| Sports fields | 2 | Soccer Field (55×35), Tennis Courts (22×18) |
-| Benches + lamps | 7 | Atrium Plaza Benches, Central Campus Lamps |
+| Landmark | Interior additions |
+|----------|-------------------|
+| **Atrium** | Glass skylight dome, 4 cafe tables + 8 chairs, plant pots with flowers, 8 hanging banners, central chandelier |
+| **Library** | 4 reading desks + 4 chairs, 6 bookshelf stacks, central chandelier, lectern, enchanting table |
+| **Sports Hall** | Basketball court markings, free-throw lines, 6-row bleachers, scoreboard |
+| **Dome** | Central oculus, spiral staircase ascending the dome |
+| **Sundial** | 12 zodiac markers around the circle, 4 cardinal quartz pillars |
+| **Fountain** | Concentric water rings (3 layers) |
+| **UG Hall I + VII** | 7-floor carpets + beds + room markers |
 
-**Total: ~13,170 detail blocks + 100,912 building/landmark blocks ≈ 114,082 hand-placed blocks.**
+### v1.5 New: 36 More OSM Buildings
+
+Auto-injected from `data/hkust_osm_buildings_mc.json`:
+- **21 staff quarters** (Staff Quarters Towers 8, 9, 10, 11, etc.) — light gray concrete with light blue windows
+- **3 academic buildings** (Wong Check She Research Center, etc.)
+- **10 default buildings** (various university facilities)
+- **2 university buildings**
+
+### v1.5 New: Coastal Details
+
+- Replaced shore grass with **sand beaches** along the entire coastline
+- Added **kelp, sea grass, and brain coral** in shallow water
+- Extended the **waterfront promenade** with oak fence railings
+
+### v1.5 New: Dynamic Elements (Vehicles)
+
+- **Metro train** at bus terminus (3 cars, 8 wide × 4 long × 2 tall, gray concrete)
+- **Red double-decker bus** at bus terminus
+- **Sail boat** at the waterfront (oak hull + white sail + oak mast)
+- **Helicopter** on Sports Hall roof (light gray + glass cockpit)
+
+### v1.5 Cumulative Stats
+
+| Layer | Blocks | Source |
+|-------|--------|--------|
+| Arnis base (terrain, OSM buildings) | ~600k | OSM + Mapterhorn |
+| Hand-built landmarks (8) | 18,527 | `inject_landmarks_amulet.py` |
+| Enhanced buildings (14) | 82,385 | `inject_manual_buildings_v2.py` |
+| Campus details (paths, trees, etc.) | ~13,170 | `inject_campus_details.py` |
+| More OSM buildings (36) | ~13,562 | `inject_more_buildings.py` |
+| Interior decorations (8 landmarks) | ~736 | `inject_interiors.py` |
+| Coastal details | ~63 | `inject_coastal.py` |
+| Dynamic elements (4 vehicles) | ~202 | `inject_dynamic.py` |
+| **Total hand-placed** | **~128,645** | |
+| **Total in world** | **~730k+** | Arnis + above |
 
 ### v1.3 New: Height-Accurate Manual Buildings (14)
 
