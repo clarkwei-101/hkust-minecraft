@@ -15,10 +15,10 @@
   "palette": {
     "default": "minecraft:air",
     "blocks": [
-      "minecraft:water",
+      "minecraft:quartz_pillar",
       "minecraft:soul_lantern",
       "minecraft:sea_lantern",
-      "minecraft:quartz_pillar",
+      "minecraft:water",
       "minecraft:polished_diorite"
     ]
   },

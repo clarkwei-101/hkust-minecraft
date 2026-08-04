@@ -15,10 +15,10 @@
   "palette": {
     "default": "minecraft:air",
     "blocks": [
-      "minecraft:polished_granite_slab",
-      "minecraft:spruce_slab",
       "minecraft:dark_oak_fence",
-      "minecraft:oak_slab"
+      "minecraft:polished_granite_slab",
+      "minecraft:oak_slab",
+      "minecraft:spruce_slab"
     ]
   },
   "block_entities": [],
