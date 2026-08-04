@@ -1,0 +1,427 @@
+{
+  "world_bounds": {
+    "min_x": 0,
+    "max_x": 816,
+    "min_z": 0,
+    "max_z": 976
+  },
+  "conversion": {
+    "coef_x": [
+      -89999.99997172013,
+      10284024.996768614
+    ],
+    "coef_z": [
+      -117187.50000008314,
+      2617819.687501856
+    ]
+  },
+  "buildings": [
+    {
+      "osm_id": 216061949,
+      "name": "教職員宿舍第8座 Staff Quarters Tower 8",
+      "mc_x": 120,
+      "mc_z": 486,
+      "height_m": 10.0,
+      "levels": null,
+      "type": "dormitory",
+      "lat": 22.3345785,
+      "lng": 114.2656138
+    },
+    {
+      "osm_id": 216062042,
+      "name": "教職員宿舍第9座 Staff Quarters Tower 9",
+      "mc_x": 96,
+      "mc_z": 478,
+      "height_m": 10.0,
+      "levels": null,
+      "type": "dormitory",
+      "lat": 22.3346508,
+      "lng": 114.2658783
+    },
+    {
+      "osm_id": 216062675,
+      "name": "教職員宿舍第11座 Staff Quarters Tower 11",
+      "mc_x": 45,
+      "mc_z": 473,
+      "height_m": 10.0,
+      "levels": null,
+      "type": "dormitory",
+      "lat": 22.3346927,
+      "lng": 114.2664407
+    },
+    {
+      "osm_id": 216063013,
+      "name": "教職員宿舍第10座 Staff Quarters Tower 10",
+      "mc_x": 71,
+      "mc_z": 473,
+      "height_m": 10.0,
+      "levels": null,
+      "type": "dormitory",
+      "lat": 22.3346939,
+      "lng": 114.2661528
+    },
+    {
+      "osm_id": 232891898,
+      "name": "黃焯書科研中心 Wong Check She Research Center for Environment and Infrastructure",
+      "mc_x": 377,
+      "mc_z": 585,
+      "height_m": 10.0,
+      "levels": null,
+      "type": "academic",
+      "lat": 22.3337319,
+      "lng": 114.2627598
+    },
+    {
+      "osm_id": 233624045,
+      "name": "張鑑泉樓（研究生宿舍一座） Stephen Kam Chuen Cheong Hall (PG Hall I)",
+      "mc_x": 124,
+      "mc_z": 96,
+      "height_m": 28.0,
+      "levels": 8,
+      "type": "dormitory",
+      "lat": 22.3379122,
+      "lng": 114.2655714
+    },
+    {
+      "osm_id": 233624046,
+      "name": "研究生宿舍第二座 (學生宿舍第五座) PG Hall II (UG Hall V)",
+      "mc_x": 168,
+      "mc_z": 72,
+      "height_m": 21.0,
+      "levels": 6,
+      "type": "dormitory",
+      "lat": 22.3381156,
+      "lng": 114.2650782
+    },
+    {
+      "osm_id": 233624047,
+      "name": "學生宿舍第二座 Undergraduate Hall II",
+      "mc_x": 41,
+      "mc_z": 143,
+      "height_m": 10.0,
+      "levels": null,
+      "type": "dormitory",
+      "lat": 22.3375058,
+      "lng": 114.2664941
+    },
+    {
+      "osm_id": 233624053,
+      "name": "學生宿舍第一座 Undergraduate Hall I",
+      "mc_x": 119,
+      "mc_z": 145,
+      "height_m": 10.0,
+      "levels": null,
+      "type": "dormitory",
+      "lat": 22.3374904,
+      "lng": 114.2656172
+    },
+    {
+      "osm_id": 235329009,
+      "name": "陳瑞球林滿珍伉儷樓（學生宿舍第七座） Chan Sui Kau and Chan Lam Moon Chun Hall (UG Hall VII)",
+      "mc_x": 60,
+      "mc_z": 86,
+      "height_m": 31.5,
+      "levels": 9,
+      "type": "dormitory",
+      "lat": 22.3379955,
+      "lng": 114.2662803
+    },
+    {
+      "osm_id": 235329019,
+      "name": "學生宿舍第六座 Undergraduate Hall VI",
+      "mc_x": 24,
+      "mc_z": 205,
+      "height_m": 42.0,
+      "levels": 12,
+      "type": "dormitory",
+      "lat": 22.3369813,
+      "lng": 114.2666772
+    },
+    {
+      "osm_id": 235914424,
+      "name": "大學宿舍B座 University Apartments Tower B",
+      "mc_x": 184,
+      "mc_z": 428,
+      "height_m": 10.0,
+      "levels": null,
+      "type": "dormitory",
+      "lat": 22.3350737,
+      "lng": 114.2648948
+    },
+    {
+      "osm_id": 235914426,
+      "name": "大學宿舍A座 University Apartments Tower A",
+      "mc_x": 200,
+      "mc_z": 492,
+      "height_m": 10.0,
+      "levels": null,
+      "type": "dormitory",
+      "lat": 22.3345275,
+      "lng": 114.2647233
+    },
+    {
+      "osm_id": 235914427,
+      "name": "盧家驄大學中心 Lo Ka Chung University Center",
+      "mc_x": 165,
+      "mc_z": 372,
+      "height_m": 10.0,
+      "levels": null,
+      "type": "academic",
+      "lat": 22.3355567,
+      "lng": 114.2651058
+    },
+    {
+      "osm_id": 235914561,
+      "name": "鄭裕彤樓 Cheng Yu Tung Building",
+      "mc_x": 302,
+      "mc_z": 460,
+      "height_m": 10.0,
+      "levels": null,
+      "type": "default",
+      "lat": 22.3348006,
+      "lng": 114.2635904
+    },
+    {
+      "osm_id": 236995335,
+      "name": "香港科技大學賽馬會高等研究院盧家驄薈萃樓 HKUST Jockey Club Institute for Advanced Study Lo Ka Chung Building",
+      "mc_x": 63,
+      "mc_z": 700,
+      "height_m": 10.0,
+      "levels": null,
+      "type": "dormitory",
+      "lat": 22.3327569,
+      "lng": 114.2662393
+    },
+    {
+      "osm_id": 240394873,
+      "name": "圖書館新翼 Library Extension",
+      "mc_x": 264,
+      "mc_z": 18,
+      "height_m": 10.0,
+      "levels": null,
+      "type": "default",
+      "lat": 22.338577,
+      "lng": 114.2640141
+    },
+    {
+      "osm_id": 240457940,
+      "name": "高級教職員宿舍第十三座 Senior Staff Quarters Block 13",
+      "mc_x": 7,
+      "mc_z": 533,
+      "height_m": 10.0,
+      "levels": null,
+      "type": "dormitory",
+      "lat": 22.334182,
+      "lng": 114.2668658
+    },
+    {
+      "osm_id": 240457945,
+      "name": "街喉抽水站 Street Hydrant Pumping Station",
+      "mc_x": 245,
+      "mc_z": 483,
+      "height_m": 10.0,
+      "levels": null,
+      "type": "default",
+      "lat": 22.3346022,
+      "lng": 114.2642226
+    },
+    {
+      "osm_id": 240457952,
+      "name": "高級教職員宿舍第十二座 Senior Staff Quarters Block 12",
+      "mc_x": 31,
+      "mc_z": 523,
+      "height_m": 10.0,
+      "levels": null,
+      "type": "dormitory",
+      "lat": 22.3342623,
+      "lng": 114.2665966
+    },
+    {
+      "osm_id": 251448557,
+      "name": "邵氏大樓 Shaw House",
+      "mc_x": 319,
+      "mc_z": 841,
+      "height_m": 10.0,
+      "levels": null,
+      "type": "default",
+      "lat": 22.3315548,
+      "lng": 114.2633963
+    },
+    {
+      "osm_id": 263493528,
+      "name": "香港賽馬會創新科技中心 The Hong Kong Jockey Club Enterprise Center",
+      "mc_x": 288,
+      "mc_z": 398,
+      "height_m": 10.0,
+      "levels": null,
+      "type": "academic",
+      "lat": 22.3353289,
+      "lng": 114.2637497
+    },
+    {
+      "osm_id": 263493529,
+      "name": "液態氦機房 Liquid Helium Plant Room",
+      "mc_x": 334,
+      "mc_z": 387,
+      "height_m": 10.0,
+      "levels": null,
+      "type": "default",
+      "lat": 22.3354252,
+      "lng": 114.2632307
+    },
+    {
+      "osm_id": 288205444,
+      "name": "新翼大樓 Annex Building",
+      "mc_x": 267,
+      "mc_z": 367,
+      "height_m": 10.0,
+      "levels": null,
+      "type": "default",
+      "lat": 22.3355965,
+      "lng": 114.2639828
+    },
+    {
+      "osm_id": 315573847,
+      "name": "李兆基商學大樓 Lee Shau Kee Business Building",
+      "mc_x": 184,
+      "mc_z": 626,
+      "height_m": 10.0,
+      "levels": null,
+      "type": "default",
+      "lat": 22.3333844,
+      "lng": 114.2648973
+    },
+    {
+      "osm_id": 315704907,
+      "name": "香港科技大學多層停車場 HKUST Multi-storey Car Park",
+      "mc_x": 354,
+      "mc_z": 13,
+      "height_m": 10.0,
+      "levels": null,
+      "type": "university",
+      "lat": 22.3386194,
+      "lng": 114.2630099
+    },
+    {
+      "osm_id": 368772044,
+      "name": "李達三葉耀珍伉儷李本俊會議大樓 Li Dak Sum Yip Yio Chin Kenneth Li Conference Lodge",
+      "mc_x": 45,
+      "mc_z": 771,
+      "height_m": 10.0,
+      "levels": null,
+      "type": "staff",
+      "lat": 22.3321516,
+      "lng": 114.2664448
+    },
+    {
+      "osm_id": 741657668,
+      "name": "風水亭 Fung Shui Pavilion",
+      "mc_x": 118,
+      "mc_z": 396,
+      "height_m": 10.0,
+      "levels": null,
+      "type": "default",
+      "lat": 22.3353519,
+      "lng": 114.2656316
+    },
+    {
+      "osm_id": 760106032,
+      "name": "羅桂祥樓 Lo Kwee-Seong Building",
+      "mc_x": 360,
+      "mc_z": 337,
+      "height_m": 10.0,
+      "levels": null,
+      "type": "default",
+      "lat": 22.3358553,
+      "lng": 114.2629436
+    },
+    {
+      "osm_id": 929486773,
+      "name": "賽馬會集賢樓 The Jockey Club Global Graduate Tower",
+      "mc_x": 97,
+      "mc_z": 557,
+      "height_m": 28.0,
+      "levels": 8,
+      "type": "dormitory",
+      "lat": 22.3339769,
+      "lng": 114.2658625
+    },
+    {
+      "osm_id": 1010089329,
+      "name": "逸夫演藝中心 Shaw Auditorium",
+      "mc_x": 313,
+      "mc_z": 566,
+      "height_m": 10.0,
+      "levels": null,
+      "type": "default",
+      "lat": 22.3339011,
+      "lng": 114.2634646
+    },
+    {
+      "osm_id": 1425048092,
+      "name": "學生宿舍第十座 Undergraduate Hall X",
+      "mc_x": 109,
+      "mc_z": 634,
+      "height_m": 10.0,
+      "levels": null,
+      "type": "dormitory",
+      "lat": 22.3333192,
+      "lng": 114.2657382
+    },
+    {
+      "osm_id": 1425048093,
+      "name": "大疆創新樓（學生宿舍第十一座） DJI Hall (UG Hall XI)",
+      "mc_x": 55,
+      "mc_z": 591,
+      "height_m": 10.0,
+      "levels": null,
+      "type": "dormitory",
+      "lat": 22.3336844,
+      "lng": 114.2663289
+    },
+    {
+      "osm_id": 1425048094,
+      "name": "學生宿舍第十二座 Undergraduate Hall XII",
+      "mc_x": 25,
+      "mc_z": 638,
+      "height_m": 10.0,
+      "levels": null,
+      "type": "dormitory",
+      "lat": 22.3332875,
+      "lng": 114.2666641
+    },
+    {
+      "osm_id": 1425159024,
+      "name": "大學宿舍C座 University Apartments Tower C",
+      "mc_x": 173,
+      "mc_z": 353,
+      "height_m": 10.0,
+      "levels": null,
+      "type": "dormitory",
+      "lat": 22.3357196,
+      "lng": 114.2650268
+    },
+    {
+      "osm_id": 1425159025,
+      "name": "大學宿舍D座 University Apartments Tower D",
+      "mc_x": 158,
+      "mc_z": 391,
+      "height_m": 10.0,
+      "levels": null,
+      "type": "dormitory",
+      "lat": 22.3353889,
+      "lng": 114.2651908
+    },
+    {
+      "osm_id": 3174704,
+      "name": "學術大樓 Academic Building",
+      "mc_x": 292,
+      "mc_z": 194,
+      "height_m": 24.5,
+      "levels": 7,
+      "type": "university",
+      "lat": 22.3370717,
+      "lng": 114.2636947
+    }
+  ]
+}

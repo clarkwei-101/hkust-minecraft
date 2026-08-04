@@ -1,7 +1,10 @@
 # Generated artifacts — don't commit
 arnis/arnis-mac-universal
 worlds/raw/
+worlds/working/
 *.mcworld.bak
+bds/
+3d-tiles/
 
 # Python
 __pycache__/

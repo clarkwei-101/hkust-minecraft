@@ -1,0 +1,162 @@
+[
+    {
+        "osm_id": 9990101,
+        "name": "Academic Building",
+        "mc_x": 210,
+        "mc_z": 185,
+        "height_m": 22,
+        "footprint": [60, 50],
+        "material": "white_concrete",
+        "description": "Main Academic Building with central Atrium"
+    },
+    {
+        "osm_id": 9990102,
+        "name": "Lecture Hall LG Complex",
+        "mc_x": 230,
+        "mc_z": 220,
+        "height_m": 16,
+        "footprint": [90, 25],
+        "material": "gray_concrete",
+        "description": "Row of lecture halls LG1-LG7"
+    },
+    {
+        "osm_id": 9990103,
+        "name": "Library Extension",
+        "mc_x": 130,
+        "mc_z": 100,
+        "height_m": 25,
+        "footprint": [40, 35],
+        "material": "gray_concrete",
+        "description": "HKUST Library Extension building"
+    },
+    {
+        "osm_id": 9990104,
+        "name": "S.H. Ho Sports Hall",
+        "mc_x": 90,
+        "mc_z": 230,
+        "height_m": 18,
+        "footprint": [50, 50],
+        "material": "red_concrete",
+        "description": "Multi-purpose sports hall with dome"
+    },
+    {
+        "osm_id": 9990105,
+        "name": "Wong Check She Research Center",
+        "mc_x": 280,
+        "mc_z": 240,
+        "height_m": 14,
+        "footprint": [30, 25],
+        "material": "gray_concrete",
+        "description": "Environmental research center"
+    },
+    {
+        "osm_id": 9990201,
+        "name": "Undergraduate Hall I",
+        "mc_x": 150,
+        "mc_z": 300,
+        "height_m": 28,
+        "footprint": [40, 14],
+        "material": "light_gray_concrete",
+        "description": "First undergraduate residence"
+    },
+    {
+        "osm_id": 9990202,
+        "name": "Undergraduate Hall II",
+        "mc_x": 195,
+        "mc_z": 310,
+        "height_m": 28,
+        "footprint": [40, 14],
+        "material": "light_gray_concrete",
+        "description": "Second undergraduate residence"
+    },
+    {
+        "osm_id": 9990203,
+        "name": "Chan Sui Kau Hall (UG VII)",
+        "mc_x": 245,
+        "mc_z": 310,
+        "height_m": 32,
+        "footprint": [50, 14],
+        "material": "light_gray_concrete",
+        "description": "Tallest undergraduate residence"
+    },
+    {
+        "osm_id": 9990204,
+        "name": "Stephen Kam Chuen Cheong Hall (PG I)",
+        "mc_x": 280,
+        "mc_z": 290,
+        "height_m": 28,
+        "footprint": [50, 14],
+        "material": "light_gray_concrete",
+        "description": "First postgraduate residence"
+    },
+    {
+        "osm_id": 9990205,
+        "name": "PG Hall II",
+        "mc_x": 320,
+        "mc_z": 310,
+        "height_m": 21,
+        "footprint": [45, 14],
+        "material": "light_gray_concrete",
+        "description": "Second postgraduate residence"
+    },
+    {
+        "osm_id": 9990206,
+        "name": "Undergraduate Hall III",
+        "mc_x": 360,
+        "mc_z": 290,
+        "height_m": 28,
+        "footprint": [40, 14],
+        "material": "light_gray_concrete",
+        "description": "Third undergraduate residence"
+    },
+    {
+        "osm_id": 9990207,
+        "name": "Undergraduate Hall IV",
+        "mc_x": 410,
+        "mc_z": 290,
+        "height_m": 28,
+        "footprint": [40, 14],
+        "material": "light_gray_concrete",
+        "description": "Fourth undergraduate residence"
+    },
+    {
+        "osm_id": 9990208,
+        "name": "Undergraduate Hall VI",
+        "mc_x": 470,
+        "mc_z": 290,
+        "height_m": 42,
+        "footprint": [40, 12],
+        "material": "light_gray_concrete",
+        "description": "Sixth undergraduate residence - tallest dorm"
+    },
+    {
+        "osm_id": 9990209,
+        "name": "Undergraduate Hall VIII",
+        "mc_x": 530,
+        "mc_z": 290,
+        "height_m": 28,
+        "footprint": [40, 14],
+        "material": "light_gray_concrete",
+        "description": "Eighth undergraduate residence"
+    },
+    {
+        "osm_id": 9990210,
+        "name": "Undergraduate Hall IX",
+        "mc_x": 590,
+        "mc_z": 290,
+        "height_m": 28,
+        "footprint": [40, 14],
+        "material": "light_gray_concrete",
+        "description": "Ninth undergraduate residence"
+    },
+    {
+        "osm_id": 9990301,
+        "name": "HKUST Bus Terminus",
+        "mc_x": 360,
+        "mc_z": 410,
+        "height_m": 6,
+        "footprint": [40, 30],
+        "material": "gray_concrete",
+        "description": "Main bus terminal with shelter"
+    }
+]

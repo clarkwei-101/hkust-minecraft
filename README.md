@@ -2,36 +2,56 @@
 
 A 1:1 Minecraft Bedrock Edition recreation of the Hong Kong University of Science and Technology (HKUST) Clear Water Bay campus, generated from real-world OpenStreetMap + Mapterhorn elevation data using [Arnis v3.0.0](https://github.com/louis-e/arnis).
 
-![v1.2 Top-Down](worlds/final/hkust_topdown_v1.2.png)
+![v1.3 Top-Down](worlds/final/hkust_topdown_v1.3.png)
 
 ---
 
-## What's in v1.2
+## What's in v1.3
 
-- **`worlds/final/HKUST-2026-Bedrock-v1.2.mcworld`** — Ready-to-load Bedrock Edition world (~8 MB) with **8 hand-built landmarks already embedded in the world** — drop it into Minecraft Bedrock and see them immediately.
-- **`worlds/final/hkust_topdown_v1.2.png`** — Annotated top-down preview showing 8 landmark positions.
-- **`scripts/inject_landmarks_amulet.py`** — Landmark injection pipeline (amulet + LevelDB backend).
-- **`scripts/patch_amulet_for_arnis.sh`** — Applies 2 patches to amulet-core so it can read Arnis-generated Bedrock 1.21.40 worlds.
-- **`landmarks/`** — Original blueprint JSON for HKUST's four most iconic landmarks.
+- **`worlds/final/HKUST-2026-Bedrock-v1.3.mcworld`** — Ready-to-load Bedrock Edition world (~6 MB) with **8 hand-built landmarks + 14 height-accurate OSM buildings** already embedded.
+- **`worlds/final/hkust_topdown_v1.3.png`** — Annotated top-down preview showing 22 features.
+- **`scripts/inject_landmarks_amulet.py`** — Landmark injection pipeline (8 hand-built structures).
+- **`scripts/inject_manual_buildings.py`** — Manual building injection (14 buildings from `data/manual_buildings.json`).
+- **`scripts/render_topdown.py`** — Render any world into a top-down PNG via amulet.
+- **`data/manual_buildings.json`** — Hand-curated list of 14 important buildings with MC coords.
 
-### Hand-built landmarks (auto-injected in v1.2)
+### v1.3 New: Height-Accurate Manual Buildings (14)
 
-| # | Landmark | Position (X/Y/Z) | Blocks | Description |
-|---|----------|------------------|--------|-------------|
-| 1 | **Academic Building Dome** | 200 / 127 / 500 | 6,907 | 40 m hemispheric dome on the elevated plateau |
-| 2 | **Circle of Time Sundial** | 185 / 127 / 530 | 1,744 | Quartz-pillar compass sundial plaza |
-| 3 | **HKUST Atrium** | 240 / 97 / 560 | 948 | Central piazza with checkerboard floor + fountain |
-| 4 | **One-World Fountain** | 279 / 78 / 663 | 492 | Sea-lantern + gold-block fountain with blue basin |
-| 5 | **Lecture Hall LG7** | 320 / 70 / 620 | 5,216 | Tiered oak-plank auditorium with red concrete stage |
-| 6 | **HKUST Underpass** | 380 / 31 / 450 | 438 | Pedestrian tunnel with sea-lantern lighting |
-| 7 | **Seaview Walkway** | 480 / 65 / 380 | 620 | 80 m oak-slab walkway with brick pillars + dark oak railings |
-| 8 | **HKUST Library** | 130 / 84 / 580 | 2,162 | 24×18×18 m glass-and-white-concrete library tower |
+| # | Building | Position (X/Y/Z) | Height | Material |
+|---|----------|------------------|--------|----------|
+| 1 | **Academic Building** | 210 / 73 / 185 | 22 m | White concrete |
+| 2 | **Lecture Hall LG Complex** | 230 / 65 / 220 | 16 m | Gray concrete |
+| 3 | **Library Extension** | 130 / 46 / 100 | 25 m | Gray concrete |
+| 4 | **S.H. Ho Sports Hall** | 90 / 68 / 230 | 18 m | Red concrete |
+| 5 | **Wong Check She Research Center** | 280 / 60 / 240 | 14 m | Gray concrete |
+| 6 | **Undergraduate Hall I** | 150 / 69 / 300 | 28 m | Light gray |
+| 7 | **Undergraduate Hall II** | 195 / 127 / 310 | 28 m | Light gray |
+| 8 | **Chan Sui Kau Hall (UG VII)** | 245 / 127 / 310 | 32 m | Light gray |
+| 9 | **Stephen Kam Chuen Cheong Hall (PG I)** | 280 / 51 / 290 | 28 m | Light gray |
+| 10 | **PG Hall II** | 320 / 43 / 310 | 21 m | Light gray |
+| 11 | **Undergraduate Hall III** | 360 / 59 / 290 | 28 m | Light gray |
+| 12 | **Undergraduate Hall VIII** | 530 / 61 / 290 | 28 m | Light gray |
+| 13 | **Undergraduate Hall IX** | 590 / 61 / 290 | 28 m | Light gray |
+| 14 | **HKUST Bus Terminus** | 360 / 57 / 410 | 6 m | Gray concrete |
 
-**Total: 18,527 hand-placed blocks across 8 landmarks.**
+**Total: ~74,916 hand-placed blocks for manual buildings + 18,527 landmark blocks = 93,443 blocks.**
+
+### v1.3 + v1.2: Hand-built Landmarks (8, auto-injected)
+
+|| # | Landmark | Position (X/Y/Z) | Blocks | Description |
+||---|----------|------------------|--------|-------------|
+|| 1 | **Academic Building Dome** | 200 / 127 / 500 | 6,907 | 40 m hemispheric dome on the elevated plateau |
+|| 2 | **Circle of Time Sundial** | 185 / 127 / 530 | 1,744 | Quartz-pillar compass sundial plaza |
+|| 3 | **HKUST Atrium** | 240 / 97 / 560 | 948 | Central piazza with checkerboard floor + fountain |
+|| 4 | **One-World Fountain** | 279 / 78 / 663 | 492 | Sea-lantern + gold-block fountain with blue basin |
+|| 5 | **Lecture Hall LG7** | 320 / 70 / 620 | 5,216 | Tiered oak-plank auditorium with red concrete stage |
+|| 6 | **HKUST Underpass** | 380 / 31 / 450 | 438 | Pedestrian tunnel with sea-lantern lighting |
+|| 7 | **Seaview Walkway** | 480 / 65 / 380 | 620 | 80 m oak-slab walkway with brick pillars + dark oak railings |
+|| 8 | **HKUST Library** | 130 / 84 / 580 | 2,162 | 24×18×18 m glass-and-white-concrete library tower |
 
 ---
 
-## What's in v1.0 → v1.0.1 → v1.1 → v1.2
+## What's in v1.0 → v1.1 → v1.2 → v1.3
 
 ### v1.0.1
 - Real Mapterhorn elevation instead of 30 m AWS Terrain Tiles
@@ -44,12 +64,21 @@ A 1:1 Minecraft Bedrock Edition recreation of the Hong Kong University of Scienc
 - Heightmap-aligned, verified by reading back from fresh load
 - Includes Academic Dome, Circle of Time, Fountain, Seaview, Library
 
-### v1.2 (current) — **Doubled landmark fidelity**
+### v1.2
 - **8 landmarks** (added Atrium, LG7, Underpass)
 - **18,527 blocks** hand-placed, reproducible in ~3 seconds
 - All 8 landmarks oversized so they remain visible from the air
 
-> **Roadmap to v1.3 (perfect replica):** Building heights from Hong Kong Lands Department 3D Tiles (218k buildings, 12M triangles) — next iteration will voxelize the actual building footprints and replace the schematic landmarks with height-accurate volumes.
+### v1.3 (current) — **Real campus buildings**
+- **+ 14 height-accurate manual buildings** with verified MC coords and OSM-derived heights
+- **Library Extension** (7 floors), **LG Complex** (4 floors), **Sports Hall** (dome)
+- **10 Undergraduate Halls** with realistic 8-12 floor heights
+- Lands Department 3D Tiles data was found to NOT cover the HKUST academic plateau
+  - See `docs/LANDS_DEPT_3D_FINDINGS.md` for details
+- OSM buildings queried via Overpass API → 57 total → 37 within world bounds
+  - 14 most important buildings hand-placed with explicit MC coords
+
+> **Roadmap to v1.4 (perfect replica):** Use Cesium ion's photogrammetry or manual LiDAR scan to get actual rooftop heights for the remaining 43 OSM buildings. Also add: Lecture halls LG1-LG7 interior, all dormitory common areas, swimming pool, indoor sports complex, Chapel, Marine Lab dock.
 
 ---
 
@@ -98,23 +127,37 @@ python3 scripts/inject_landmarks_amulet.py \
   --world /tmp/hkust_extracted # actually inject (8 landmarks, 18,527 blocks)
 ```
 
+### 4. Inject height-accurate manual buildings (v1.3)
+
+```bash
+python3 scripts/inject_manual_buildings.py \
+  --world /tmp/hkust_extracted \
+  --verbose   # preview 14 buildings, 74,916 blocks
+```
+
 ---
 
 ## Files
 
-| Path | Purpose |
-|------|---------|
-| `worlds/final/HKUST-2026-Bedrock-v1.2.mcworld` | v1.2 world with 8 landmarks (8.3 MB) |
-| `worlds/final/HKUST-2026-Bedrock-v1.1.mcworld` | v1.1 world with 5 landmarks (8.3 MB) |
-| `worlds/final/HKUST-2026-Bedrock.mcworld` | v1.0.1 (no landmarks injected) |
-| `worlds/final/hkust_topdown_v1.2.png` | v1.2 annotated top-down preview |
-| `worlds/final/hkust_topdown_v1.1.png` | v1.1 annotated top-down preview |
-| `arnis/arnis-mac-universal` | Arnis v3.0.0 binary (107 MB) |
-| `osm/hkust-overpass.json` | Cached Overpass API dump |
-| `landmarks/` | Blueprint JSON for landmarks |
-| `scripts/inject_landmarks_amulet.py` | Landmark injection pipeline (8 landmarks) |
-| `scripts/patch_amulet_for_arnis.sh` | amulet Arnis compatibility patch |
-| `scripts/annotate_preview.py` | Top-down renderer (annotates blocks → colors) |
+|| Path | Purpose |
+||------|---------|
+|| `worlds/final/HKUST-2026-Bedrock-v1.3.mcworld` | v1.3 world with 8 landmarks + 14 buildings (6.1 MB) |
+|| `worlds/final/hkust_topdown_v1.3.png` | v1.3 annotated top-down preview |
+|| `worlds/final/HKUST-2026-Bedrock-v1.2.mcworld` | v1.2 world with 8 landmarks (8.3 MB) |
+|| `worlds/final/hkust_topdown_v1.2.png` | v1.2 annotated top-down preview |
+|| `worlds/final/HKUST-2026-Bedrock-v1.1.mcworld` | v1.1 world with 5 landmarks (8.3 MB) |
+|| `worlds/final/HKUST-2026-Bedrock.mcworld` | v1.0.1 (no landmarks injected) |
+|| `arnis/arnis-mac-universal` | Arnis v3.0.0 binary (107 MB) |
+|| `osm/hkust-overpass.json` | Cached Overpass API dump |
+|| `landmarks/` | Blueprint JSON for landmarks |
+|| `data/manual_buildings.json` | 14 hand-curated buildings with MC coords |
+|| `data/hkust_osm_buildings_mc.json` | 57 OSM buildings converted to MC coords |
+|| `scripts/inject_landmarks_amulet.py` | Landmark injection pipeline (8 landmarks) |
+|| `scripts/inject_manual_buildings.py` | Manual building injection (14 buildings) |
+|| `scripts/render_topdown.py` | World → top-down PNG via amulet |
+|| `scripts/patch_amulet_for_arnis.sh` | amulet Arnis compatibility patch |
+|| `scripts/annotate_preview.py` | Top-down renderer (annotates blocks → colors) |
+|| `scripts/annotate_v1_3.py` | v1.3-specific annotator with 22 features |
 
 ---
 
@@ -140,7 +183,7 @@ Standard `amulet-core` (v1.9.43) cannot read Arnis-generated Bedrock 1.21.40 wor
 
 ## Embed on a website
 
-The annotated top-down PNG is included as `worlds/final/hkust_topdown_v1.2.png`. The HKUST AI Applications Society admission-letter site embeds it at `src/app/content/minecraft/page.tsx` with a download link to `HKUST-2026-Bedrock-v1.2.mcworld`.
+The annotated top-down PNG is included as `worlds/final/hkust_topdown_v1.3.png`. The HKUST AI Applications Society admission-letter site embeds it at `src/app/content/minecraft/page.tsx` with a download link to `HKUST-2026-Bedrock-v1.3.mcworld`.
 
 ---
 
