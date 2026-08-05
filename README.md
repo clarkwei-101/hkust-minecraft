@@ -2,7 +2,21 @@
 
 A 1:1 Minecraft Bedrock Edition recreation of the Hong Kong University of Science and Technology (HKUST) Clear Water Bay campus, generated from real-world OpenStreetMap + Mapterhorn elevation data using [Arnis v3.0.0](https://github.com/louis-e/arnis).
 
-![v1.9 Top-Down](worlds/final/hkust_topdown_v1.9.png)
+![v1.9 Top-Down Hi-Res](worlds/final/hkust_topdown_v1.9_hires.png)
+
+---
+
+## ⬇️ Downloads
+
+**Latest release:** [v1.9 — 100% Buildings](https://github.com/clarkwei-101/hkust-minecraft/releases/tag/v1.9)
+
+| File | Size | Description |
+|------|------|-------------|
+| [HKUST-2026-Bedrock-v1.9.mcworld](https://github.com/clarkwei-101/hkust-minecraft/releases/download/v1.9/HKUST-2026-Bedrock-v1.9.mcworld) | 12.7 MB | Playable Bedrock world — import into Minecraft Bedrock |
+| [hkust_topdown_v1.9_hires.png](https://github.com/clarkwei-101/hkust-minecraft/releases/download/v1.9/hkust_topdown_v1.9_hires.png) | 388 KB | 816×976 annotated hi-res map (this preview) |
+| [hkust_topdown_v1.9.png](https://github.com/clarkwei-101/hkust-minecraft/releases/download/v1.9/hkust_topdown_v1.9.png) | 159 KB | 408×488 quick-look preview |
+
+**How to play:** Download the `.mcworld`, send it to your device (phone / tablet / Windows / Xbox), then open with Minecraft Bedrock — it imports as a new world.
 
 ---
 
