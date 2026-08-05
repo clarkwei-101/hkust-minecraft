@@ -1,8 +1,21 @@
-# HKUST 真实地标 vs v1.7 还原度审计报告
+# HKUST 真实地标 vs v2.0 还原度审计报告
 
 **日期**: 2026-08-05
-**审计对象**: HKUST Minecraft v1.7 (187,870 块手放)
+**审计对象**: HKUST Minecraft v2.0 (313,000 块手放)
 **审计依据**: HKUST 官方网站 (hkust.edu.hk/campus-highlights)、HKUST 官方校园地图 (ias_map.pdf)、HKUST FYS、HKUST 校友导览资料
+
+---
+
+## v2.0 修复 (相对于 v1.9)
+
+| 问题 | v1.9 状态 | v2.0 修复 | 块数 |
+|------|----------|----------|------|
+| 建筑物飞起来 | 单点 ground_y,平底不跟斜坡 | 计算 footprint min(ground_y) + 填石头贴地 | ~71,000 |
+| 地势太陡 | OSM heightmap spike | 3×3 rolling-average filter 平滑 footprint | ~78,000 |
+| 日晷半成品 | 仅有 stepped base + 3 pillars | 18m diorite plaza + 12 hour markers + 22.5° gnomon + RED 火鸟 | ~756 |
+| 无大门出入口 | 建筑四面无差别 | 4-block 门洞 + oak-fence jambs + canopy + 灯笼 + 红地毯 + 路径 + 招牌 | ~1,365 |
+
+**v2.0 总新增块数**: ~80,400 (累计 v1.9 = 313,000 手放块)
 
 ---
 
@@ -19,7 +32,7 @@
 | 7 | **Armillary Sphere (浑天仪)** | 方树泉廊起点,明朝1437年复制品 | ✓ 金色同心圆环 + 中心轴 | ✅ **新增** |
 | 8 | **Shaw Auditorium (邵逸夫演艺中心)** | 三环椭圆叠层结构,Henning Larsen 2021 | ✓ 椭圆建筑 + 金色内芯 | ✅ **新增** |
 | 9 | **Coastal Marine Lab (海岸海洋实验室)** | 校园东南角海岸,直接临海 | ✓ 玻璃实验室 + 水族馆圆顶 | ✅ **新增** |
-| 10 | **Red Bird Sundial (火鸟)** | 红色钢制雕塑,Charles & Joan Walsh-Smith | ✓ **红色混凝土** | ✅ **已修复** |
+| 10 | **Red Bird Sundial (火鸟)** | 红色钢制雕塑,Charles & Joan Walsh-Smith | ✓ **完整版: 6m 红混凝土雕塑 + 12 时辰标记 + 22.5° 角 gnomon + 18m 花岗岩广场** | ✅ **v2.0 完整化** |
 
 ---
 

@@ -2,25 +2,32 @@
 
 A 1:1 Minecraft Bedrock Edition recreation of the Hong Kong University of Science and Technology (HKUST) Clear Water Bay campus, generated from real-world OpenStreetMap + Mapterhorn elevation data using [Arnis v3.0.0](https://github.com/louis-e/arnis).
 
-![v1.9 Top-Down Hi-Res](worlds/final/hkust_topdown_v1.9_hires.png)
+![v2.0 Top-Down Hi-Res](worlds/final/hkust_topdown_v2.0_hires.png)
 
 ---
 
 ## ⬇️ Downloads
 
-**Latest release:** [v1.9 — 100% Buildings](https://github.com/clarkwei-101/hkust-minecraft/releases/tag/v1.9)
+**Latest release:** [v2.0 — Physics, Gates & Complete Sundial](https://github.com/clarkwei-101/hkust-minecraft/releases/tag/v2.0)
 
 | File | Size | Description |
 |------|------|-------------|
-| [HKUST-2026-Bedrock-v1.9.mcworld](https://github.com/clarkwei-101/hkust-minecraft/releases/download/v1.9/HKUST-2026-Bedrock-v1.9.mcworld) | 12.7 MB | Playable Bedrock world — import into Minecraft Bedrock |
-| [hkust_topdown_v1.9_hires.png](https://github.com/clarkwei-101/hkust-minecraft/releases/download/v1.9/hkust_topdown_v1.9_hires.png) | 388 KB | 816×976 annotated hi-res map (this preview) |
-| [hkust_topdown_v1.9.png](https://github.com/clarkwei-101/hkust-minecraft/releases/download/v1.9/hkust_topdown_v1.9.png) | 159 KB | 408×488 quick-look preview |
+| [HKUST-2026-Bedrock-v2.0.mcworld](https://github.com/clarkwei-101/hkust-minecraft/releases/download/v2.0/HKUST-2026-Bedrock-v2.0.mcworld) | 6.5 MB | Playable Bedrock world — import into Minecraft Bedrock |
+| [hkust_topdown_v2.0_hires.png](https://github.com/clarkwei-101/hkust-minecraft/releases/download/v2.0/hkust_topdown_v2.0_hires.png) | 171 KB | 408×488 annotated v2.0 map |
+| [hkust_topdown_v2.0.png](https://github.com/clarkwei-101/hkust-minecraft/releases/download/v2.0/hkust_topdown_v2.0.png) | 86 KB | 408×488 quick-look preview |
+
+**Previous releases**
+
+| File | Size | Description |
+|------|------|-------------|
+| [HKUST-2026-Bedrock-v1.9.mcworld](https://github.com/clarkwei-101/hkust-minecraft/releases/download/v1.9/HKUST-2026-Bedrock-v1.9.mcworld) | 12.7 MB | v1.9 — 100% buildings (no terrain fix, no gates) |
+| [HKUST-2026-Bedrock-v1.7.mcworld](https://github.com/clarkwei-101/hkust-minecraft/releases/download/v1.7/HKUST-2026-Bedrock-v1.7.mcworld) | 6.1 MB | v1.7 — 12 landmarks + missing academic buildings |
 
 **How to play:** Download the `.mcworld`, send it to your device (phone / tablet / Windows / Xbox), then open with Minecraft Bedrock — it imports as a new world.
 
 ---
 
-## What's in v1.9 (Current Release — 100% Building Coverage)
+## What's in v1.7 (Previous Releases — 12 Landmarks + Missing Academic Buildings)
 
 v1.7 adds **ALL missing academic buildings** based on the official HKUST campus map, plus fixes the Sundial to match the real "Red Bird" sculpture.
 
@@ -92,7 +99,7 @@ v1.7 adds **ALL missing academic buildings** based on the official HKUST campus 
 
 ---
 
-## What's in v1.8 (Current Release — 98%+ fidelity)
+## What's in v1.8 (Previous Release — Campus Life Details)
 
 v1.8 closes the final 5% gap by injecting the **campus life details** that
 turn a 1:1 campus into a believable walk-through — buses & bus stops, the
@@ -137,7 +144,71 @@ Library roof.
 
 ---
 
-## What's in v1.9 (Current Release — Complete Buildings)
+## What's in v2.0 (Current Release — Physics, Gates & Complete Sundial)
+
+v1.9 was visually convincing but had **three critical issues** that broke immersion:
+
+1. **Buildings floating** — `ground_y(center)` only sampled one block, so flat building bases
+   ended up above local ground on slopes — buildings appeared to hover.
+2. **Terrain too steep** — Arnis OSM heightmaps spike near coastal cliffs and the south-east
+   ridge, creating unrealistic vertical cliffs.
+3. **Sundial half-finished** — only a stepped base + 3 quartz pillars, no actual RED 火鸟
+   sculpture, no hour-marker roman numerals, no proper gnomon angle.
+4. **No entrance gates** — visitors can't tell which face is the front of each building.
+
+v2.0 fixes all four.
+
+- **`worlds/working/v2.0/`** — Working directory with v2.0 world (80,400 new blocks)
+- **`worlds/final/HKUST-2026-Bedrock-v2.0.mcworld`** — 6.5 MB Bedrock mcworld
+- **`worlds/final/hkust_topdown_v2.0.png`** — 408×488 annotated top-down preview
+
+### v2.0 Fixes
+
+| Fix | Method | Blocks |
+|-----|--------|--------|
+| **Smooth terrain** | 3×3 rolling-average filter on each building footprint + fill valleys with stone/dirt | ~78,000 |
+| **Anchor buildings** | Compute footprint `min(ground_y)` and fill all blocks above with stone so the building base sits flush with the lowest point | ~71,000 |
+| **Complete Sundial** | 18 m polished diorite plaza + 12h quartz-pillar markers (I–XII) + 22.5° angle gnomon + real RED 火鸟 sculpture (6 m tall, red concrete body, outstretched wings, yellow beak, sea-lantern eyes, orange crown tuft) | ~756 |
+| **Entrance gates** | Every v1.9 building gets a 4-block wide door cut into its front wall, oak-fence jambs, dark-oak canopy with hanging lanterns, 4-block red carpet + 5-block path leading away, gold-block signposts and a labelled sign above | ~1,365 |
+
+### v2.0 New Landmarks
+
+The **Circle of Time Sundial** is now finally complete. The previous v1.8 attempt had only a stepped
+granite base and three quartz pillars. v2.0 adds:
+
+- **18 m polished diorite plaza** — you can actually walk on it
+- **12 hour-marker quartz pillars** — labelled I, II, III, IV, V, VI, VII, VIII, IX, X, XI, XII
+- **Cardinal markers** — gold blocks at N, S, E, W
+- **22.5° angled gnomon** — black concrete staircase pointing north (real HKUST points to Arcturus)
+- **RED 火鸟 sculpture** — 6 m tall, with red concrete body, outstretched wings, yellow beak, sea-lantern eyes, orange crown tuft
+
+### v2.0 Entrance Gates
+
+Every v1.9 large building now has a defined front door with:
+
+- 4-block wide door cut into the front wall
+- Oak-fence jambs on each side
+- Dark-oak canopy slab on top with hanging lanterns
+- 4-block red carpet leading to the door
+- 5-block gray concrete path leading away from the door
+- Gold-block signposts flanking the door
+- A labelled sign above the door
+
+This makes the buildings walk-through-believable: you can see clearly which face is the entrance,
+walk up the red carpet, and step inside.
+
+### v2.0 Cumulative Stats
+
+| Layer | Blocks |
+|-------|--------|
+| Through v1.9 | ~232,600 |
+| **v2.0 Physics + Gates** | **~80,400** |
+| **Total Hand-Placed** | **~313,000** |
+| Total world (incl. Arnis base) | **~915,000** |
+
+---
+
+## What's in v1.9 (Previous Release — Complete Buildings)
 
 A line-by-line audit against the official **HKUST IAS Map v202601** revealed
 that 13 important buildings listed in the campus map were *not actually placed*
