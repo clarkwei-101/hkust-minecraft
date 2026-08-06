@@ -100,9 +100,11 @@ def ground_y(level, x, z, lo=0, hi=200):
 
 def is_building(name):
     """Is this a hand-placed building block (not terrain)?"""
+    if name in ('err',):
+        return False  # Skip PyMCTranslate translation failures
     if name in TERRAIN:
         return False
-    if name in ('air', 'null', 'err'):
+    if name in ('air', 'null'):
         return False
     if name == 'water':  # pool water = building
         return True
